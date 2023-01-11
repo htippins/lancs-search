@@ -1,14 +1,29 @@
 <template>
-    <Link href="/">Index page</Link>&nbsp;
-    <Link href="/show">Show page</Link>
-    <div>This is the timer: {{ timer }}</div>
-    <slot>Default</slot>
+    <header class="border-b border-gray-200 w-full">
+        <div class="container mx-auto">
+            <nav class="p-4 flex items-center justify-between">
+                <div class="text-lg font-medium">
+                    <Link href="/">Home</Link>
+                </div>
+                <div class="text-xl text-indigo-600 font-bold text-center">
+                    <Link href="/">LancsSearch</Link>
+                </div>
+                <div>
+                    <Link
+                        class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md"
+                        >+ Submit an organisation</Link
+                    >
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <slot>Default</slot>
+    </main>
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
-
-const timer = ref(0);
-setInterval(() => timer.value++, 1000);
 </script>

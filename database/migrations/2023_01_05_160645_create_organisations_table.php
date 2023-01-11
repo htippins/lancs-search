@@ -18,14 +18,15 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title', 100);
             $table->text('description');
-            $table->foreignId('location_id')->constrained();
+            $table->string('category', 100);
+            $table->string('city', 100)->nullable();
+            $table->string('county', 100)->nullable();
             $table->integer('phone_num_1')->nullable();
             $table->integer('phone_num_2')->nullable();
             $table->integer('text_num')->nullable();
             $table->string('website', 200)->nullable();
             $table->string('email', 200)->nullable();
             $table->string('twitter', 100)->nullable();
-            $table->foreignId('category_id')->constrained();
         });
     }
 

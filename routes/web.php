@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrganisationController;
-use App\Models\Organisation;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +18,6 @@ use App\Models\Organisation;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/show', [IndexController::class, 'show']);
 
-Route::resource('organisation', OrganisationController::class);
+Route::resource('organisation', OrganisationController::class)
+    ->only(['index', 'show', 'organisation', 'create']);
 

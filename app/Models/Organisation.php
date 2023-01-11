@@ -8,14 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Organisation extends Model
 {
     use HasFactory;
-
-    public function location()
-    {
-        return $this->belongsTo(Location::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
 }

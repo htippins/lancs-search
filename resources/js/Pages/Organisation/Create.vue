@@ -1,0 +1,9 @@
+<template>
+    <form>
+        <div>
+            <div>
+                <label></label>
+            </div>
+        </div>
+    </form>
+</template>
