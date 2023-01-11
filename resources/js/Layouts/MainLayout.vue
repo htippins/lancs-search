@@ -3,13 +3,14 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-lg font-medium">
-                    <Link href="/">Home</Link>
+                    <Link href="/organisation">Organisations</Link>
                 </div>
                 <div class="text-xl text-indigo-600 font-bold text-center">
                     <Link href="/">LancsSearch</Link>
                 </div>
                 <div>
                     <Link
+                        href="/organisation/create"
                         class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md"
                         >+ Submit an organisation</Link
                     >

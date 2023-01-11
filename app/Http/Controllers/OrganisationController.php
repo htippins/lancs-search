@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Organisation;
-use App\Models\Location;
 use Illuminate\Http\Request;
 
 class OrganisationController extends Controller
@@ -29,7 +28,7 @@ class OrganisationController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Organisation/Create');
     }
 
     /**
@@ -40,7 +39,10 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Organisation::create($request->all());
+
+        return redirect()->route('organisation.index')
+        ->with('success', 'Listing was created!');
     }
 
     /**

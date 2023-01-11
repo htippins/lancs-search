@@ -19,9 +19,4 @@ class IndexController extends Controller
     {
         return inertia('Index/Show');
     }
-    
-    public function create()
-    {
-        return inertia('Organisation/Create');
-    }
 }

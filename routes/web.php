@@ -19,5 +19,5 @@ Route::get('/', [IndexController::class, 'index']);
 Route::get('/show', [IndexController::class, 'show']);
 
 Route::resource('organisation', OrganisationController::class)
-    ->only(['index', 'show', 'organisation', 'create']);
+    ->only(['index', 'show', 'create', 'store']);
 
