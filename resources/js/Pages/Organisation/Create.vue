@@ -4,10 +4,16 @@
             <div>
                 <label>Name of organisation</label>
                 <input type="text" v-model="form.title" />
+                <div v-if="form.errors.title">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>Description</label>
                 <textarea type="text" v-model="form.description" />
+                <div v-if="form.errors.description">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>Category</label>
@@ -41,6 +47,9 @@
                     <option value="veterans">Veterans</option>
                     <option value="food banks">Food banks</option>
                 </select>
+                <div v-if="form.errors.category">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>Demographics</label>
@@ -50,30 +59,51 @@
                     <option value="adult">Adults</option>
                     <option value="older adult">Older Adults</option>
                 </select>
+                <div v-if="form.errors.demographics">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>Town/City</label>
                 <input type="text" v-model="form.city" />
+                <div v-if="form.errors.city">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>County</label>
                 <input type="text" v-model="form.county" />
+                <div v-if="form.errors.county">
+                    <p>Required field</p>
+                </div>
             </div>
             <div>
                 <label>Phone number</label>
                 <input type="text" v-model.number="form.phone_num_1" />
+                <div v-if="form.errors.phone_num_1">
+                    <p>Error with input</p>
+                </div>
             </div>
             <div>
                 <label>Second phone number</label>
                 <input type="text" v-model.number="form.phone_num_2" />
+                <div v-if="form.errors.phone_num_2">
+                    <p>Error with input</p>
+                </div>
             </div>
             <div>
                 <label>Text number</label>
                 <input type="text" v-model.number="form.text_num" />
+                <div v-if="form.errors.text_num">
+                    <p>Error with input</p>
+                </div>
             </div>
             <div>
                 <label>Website</label>
                 <input type="text" v-model="form.website" />
+                <div v-if="form.errors.website">
+                    <p>Error with input</p>
+                </div>
             </div>
             <div>
                 <label>Email</label>
@@ -100,7 +130,7 @@ const form = useForm({
     category: null,
     demographics: null,
     city: null,
-    county: null,
+    county: "Lancashire",
     phone_num_1: null,
     phone_num_2: null,
     text_num: null,

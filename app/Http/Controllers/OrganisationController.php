@@ -39,10 +39,27 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
-        Organisation::create($request->all());
+        // Organisation::create($request->all());
+
+        Organisation::create(
+            $request->validate([
+                'title' => 'required|string',
+                'description' => 'required|string',
+                'category' => 'required',
+                'city' => 'required',
+                'county' => 'required',
+                'phone_num_1' => 'nullable|integer|min:4|max:11',
+                'phone_num_2' => 'nullable|integer|min:4|max:11',
+                'text_num' => 'nullable|integer|min:4|max:11',
+                'website' => 'nullable|string',
+                'email' => 'nullable|email:filter',
+                'twitter' => 'nullable'
+            ])
+        );
+
 
         return redirect()->route('organisation.index')
-        ->with('success', 'Listing was created!');
+            ->with('success', 'Listing was created!');
     }
 
     /**

@@ -17,6 +17,9 @@
                 </div>
             </nav>
         </div>
+        <div v-if="flashSuccess" class="bg-red-900">
+            {{ flashSuccess }}
+        </div>
     </header>
 
     <main class="container mx-auto p-4">
@@ -25,6 +28,9 @@
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/inertia-vue3";
-import { ref } from "vue";
+import { computed } from "vue";
+import { Link, usePage } from "@inertiajs/inertia-vue3";
+
+const page = usePage();
+const flashSuccess = computed(() => page.props.value.flash.success);
 </script>
