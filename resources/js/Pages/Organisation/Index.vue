@@ -3,21 +3,23 @@
         <Box v-for="organisation in organisations" :key="organisation.id">
             <h1 class="text-2xl mb-2">{{ organisation.title }}</h1>
             <h2 class="mb-10 italic">{{ organisation.description }}</h2>
-            <p>
-                {{ organisation.category }}
-            </p>
-            <p>
-                {{ organisation.demographic }}
-            </p>
+            <div class="flex gap-6">
+                <p>
+                    <span class="text-gray-500">Category: </span>
+                    {{ organisation.category }}
+                </p>
+                <p>
+                    <span class="text-gray-500">Demographic: </span>
+                    {{ organisation.demographic }}
+                </p>
+            </div>
 
             <!-- Contact details -->
-            <div>
-                <div class="flex justify-between text-gray-600 text-md mt-2">
+            <div class="mt-4">
+                <p>Contact details</p>
+                <div class="grid grid-cols-3 text-gray-600 text-md mt-2">
                     <p v-if="organisation.phone_num_1">
-                        <font-awesome-icon
-                            icon="fa-solid fa-phone"
-                            class="text-black"
-                        />
+                        <font-awesome-icon icon="fa-solid fa-phone" />
                         {{ organisation.phone_num_1 }}
                     </p>
                     <p v-if="organisation.phone_num_2">
@@ -30,10 +32,7 @@
                         {{ organisation.website }}
                     </p>
                     <p v-if="organisation.email">
-                        <font-awesome-icon
-                            icon="fa-solid fa-paper-plane"
-                            class="text-black"
-                        />
+                        <font-awesome-icon icon="fa-solid fa-paper-plane" />
                         {{ organisation.email }}
                     </p>
                     <p v-if="organisation.twitter">
