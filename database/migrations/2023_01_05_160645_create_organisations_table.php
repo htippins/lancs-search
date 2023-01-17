@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title', 100);
             $table->text('description');
             $table->string('category', 100);
+            $table->string('demographic', 100);
             $table->string('city', 100)->nullable();
             $table->string('county', 100)->nullable();
             $table->integer('phone_num_1')->nullable();
