@@ -20,6 +20,7 @@ class OrganisationFactory extends Factory
             'title' => fake()->word(),
             'description' => fake()->paragraph(),
             'category' => fake() -> word(),
+            'demographic' => fake() -> word(),
             'phone_num_1' => fake()->randomNumber(),
             'website' => fake()->domainName(),
             'email' => fake() ->email(),

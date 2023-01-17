@@ -8,10 +8,10 @@
                 <input
                     type="text"
                     v-model="form.title"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.title">
-                    <p>Required field</p>
+                    <p class="text-right text-red-800">Required field</p>
                 </div>
             </div>
             <div>
@@ -21,10 +21,10 @@
                 <textarea
                     type="text"
                     v-model="form.description"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.description">
-                    <p>Required field</p>
+                    <p class="text-right text-red-800">Required field</p>
                 </div>
             </div>
             <div>
@@ -33,39 +33,45 @@
                 >
                 <select
                     v-model="form.category"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 >
                     <option disable value="">Please select...</option>
-                    <option value="therapy">Therapy</option>
-                    <option value="debt">Debt support</option>
-                    <option value="bereavement">Bereavement</option>
-                    <option value="education">MH related education</option>
-                    <option value="anger management">Anger Management</option>
-                    <option value="sexual trauma">Sexual trauma</option>
-                    <option value="substance misuse">Substance Misuse</option>
-                    <option value="gambling addiction">
+                    <option value="Therapy">Therapy</option>
+                    <option value="Debt">Debt support</option>
+                    <option value="Bereavement">Bereavement</option>
+                    <option value="Education">MH related education</option>
+                    <option value="Anger management">Anger Management</option>
+                    <option value="Sexual trauma">Sexual trauma</option>
+                    <option value="Substance misuse">Substance Misuse</option>
+                    <option value="Gambling addiction">
                         Gambling addiction
                     </option>
-                    <option value="housing">Housing/homelessness</option>
-                    <option value="suicide/self harm">Suicide/self harm</option>
-                    <option value="work">Mental health at work</option>
-                    <option value="domestic abuse">Domestic Abuse</option>
-                    <option value="ethnic miniorities">
+                    <option value="Housing">Housing/homelessness</option>
+                    <option value="Suicide/self harm">Suicide/self harm</option>
+                    <option value="Mental health at work">
+                        Mental health at work
+                    </option>
+                    <option value="Domestic abuse">Domestic Abuse</option>
+                    <option value="Ethnic miniorities">
                         Ethnic minorities
                     </option>
-                    <option value="miscarriage">Miscarriage support</option>
-                    <option value="eating disorders">Eating disorders</option>
-                    <option value="conditions">Specific condition</option>
-                    <option value="men's group">Men's Group</option>
-                    <option value="wellbeing">General wellbeing</option>
-                    <option value="carers">Services for carers</option>
-                    <option value="misc">Miscallaneous</option>
-                    <option value="befriending">Befriending</option>
-                    <option value="veterans">Veterans</option>
-                    <option value="food banks">Food banks</option>
+                    <option value="Miscarriage support">
+                        Miscarriage support
+                    </option>
+                    <option value="Eating disorders">Eating disorders</option>
+                    <option value="Specific conditions">
+                        Specific condition
+                    </option>
+                    <option value="Men's groups">Men's Group</option>
+                    <option value="General wellbeing">General wellbeing</option>
+                    <option value="Carer support">Services for carers</option>
+                    <option value="Misc">Miscallaneous</option>
+                    <option value="Befriending">Befriending</option>
+                    <option value="Veterans">Veterans</option>
+                    <option value="Food banks">Food banks</option>
                 </select>
                 <div v-if="form.errors.category">
-                    <p>Required field</p>
+                    <p class="text-right text-red-800">Required field</p>
                 </div>
             </div>
             <div>
@@ -73,16 +79,17 @@
                     >Demographics</label
                 >
                 <select
-                    v-model="form.demographics"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    v-model="form.demographic"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 >
                     <option disable value="">Please select...</option>
-                    <option value="young person">Young Persons</option>
-                    <option value="adult">Adults</option>
-                    <option value="older adult">Older Adults</option>
+                    <option value="Young persons">Young Persons</option>
+                    <option value="Adult">Adults</option>
+                    <option value="Older adults">Older Adults</option>
+                    <option value="Any age">Any age</option>
                 </select>
-                <div v-if="form.errors.demographics">
-                    <p>Required field</p>
+                <div v-if="form.errors.demographic">
+                    <p class="text-right text-red-800">Required field</p>
                 </div>
             </div>
             <div>
@@ -92,10 +99,10 @@
                 <input
                     type="text"
                     v-model="form.city"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.city">
-                    <p>Required field</p>
+                    <p class="text-right text-red-800">Required field</p>
                 </div>
             </div>
             <div>
@@ -105,10 +112,10 @@
                 <input
                     type="text"
                     v-model="form.county"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.county">
-                    <p>Required field</p>
+                    <p class="text-right">Required field</p>
                 </div>
             </div>
             <div>
@@ -118,7 +125,7 @@
                 <input
                     type="text"
                     v-model.number="form.phone_num_1"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.phone_num_1">
                     <p>Error with input</p>
@@ -131,7 +138,7 @@
                 <input
                     type="text"
                     v-model.number="form.phone_num_2"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.phone_num_2">
                     <p>Error with input</p>
@@ -144,7 +151,7 @@
                 <input
                     type="text"
                     v-model.number="form.text_num"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.text_num">
                     <p>Error with input</p>
@@ -157,7 +164,7 @@
                 <input
                     type="text"
                     v-model="form.website"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.website">
                     <p>Error with input</p>
@@ -170,7 +177,7 @@
                 <input
                     type="email"
                     v-model="form.email"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
             </div>
             <div>
@@ -180,7 +187,7 @@
                 <input
                     type="text"
                     v-model="form.twitter"
-                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500 mb-2"
+                    class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
             </div>
 
@@ -203,7 +210,7 @@ const form = useForm({
     title: null,
     description: null,
     category: null,
-    demographics: null,
+    demographic: null,
     city: null,
     county: "Lancashire",
     phone_num_1: null,

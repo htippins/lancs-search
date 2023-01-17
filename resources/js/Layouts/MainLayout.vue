@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-lg font-medium">
-                    <Link href="/organisation">Organisations</Link>
+                    <Link href="/organisation">Browse</Link>
                 </div>
                 <div class="text-xl text-indigo-600 font-bold text-center">
                     <Link href="/">LancsSearch</Link>
