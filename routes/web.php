@@ -18,6 +18,5 @@ use App\Http\Controllers\OrganisationController;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/show', [IndexController::class, 'show']);
 
-Route::resource('organisation', OrganisationController::class)
-    ->only(['index', 'show', 'create', 'store']);
+Route::resource('organisation', OrganisationController::class);
 
