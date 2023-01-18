@@ -5,24 +5,27 @@
                 <div class="text-lg font-medium">
                     <Link href="/organisation">Browse</Link>
                 </div>
-                <div class="text-xl text-indigo-600 font-bold text-center">
+                <div class="text-xl text-[#81b29a] font-bold text-center">
                     <Link href="/">LancsSearch</Link>
                 </div>
                 <div>
                     <Link
                         href="/organisation/create"
-                        class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md"
+                        class="bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md"
                         >+ Submit an organisation</Link
                     >
                 </div>
             </nav>
         </div>
-        <div v-if="flashSuccess" class="bg-red-900">
-            {{ flashSuccess }}
-        </div>
     </header>
 
     <main class="container mx-auto p-4">
+        <div
+            v-if="flashSuccess"
+            class="mb-4 border rounded-md shadow-sm border-green-200 bg-green-50 p-2"
+        >
+            {{ flashSuccess }}
+        </div>
         <slot>Default</slot>
     </main>
 </template>

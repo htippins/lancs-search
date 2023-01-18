@@ -194,7 +194,7 @@
             <div>
                 <button
                     type="submit"
-                    class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md w-full mt-2"
+                    class="bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md w-full mt-2"
                 >
                     Submit
                 </button>
