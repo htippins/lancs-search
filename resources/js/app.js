@@ -6,12 +6,14 @@ import {
     faUserSecret,
     faPaperPlane,
     faPhone,
+    faTrash,
+    faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import MainLayout from "./Layouts/MainLayout.vue";
 import "../css/app.css";
 
-library.add(faUserSecret, faPaperPlane, faPhone);
+library.add(faUserSecret, faPaperPlane, faPhone, faTrash, faPenToSquare);
 library.add(faTwitter);
 
 createInertiaApp({

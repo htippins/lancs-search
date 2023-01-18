@@ -1,35 +1,33 @@
 <template>
     <div class="w-2/3 mx-auto">
         <Box v-for="organisation in organisations" :key="organisation.id">
-            <div>
-                <h1 class="text-2xl mb-2">{{ organisation.title }}</h1>
-                <h2 class="mb-6 italic">{{ organisation.description }}</h2>
-                <div class="flex justify-between">
-                    <p class="text-[#3d405b] font-medium">
-                        <span class="text-slate-500 font-light"
-                            >Category:
-                        </span>
-                        {{ organisation.category }}
-                    </p>
-                    <p class="text-[#e07a5f] font-medium">
-                        <span class="text-slate-500 font-light"
-                            >Demographic:
-                        </span>
-                        {{ organisation.demographic }}
-                    </p>
+            <div class="flex justify-between">
+                <div>
+                    <h1 class="text-2xl mb-2">{{ organisation.title }}</h1>
                 </div>
                 <div>
                     <Link :href="`/organisation/${organisation.id}/edit`"
-                        >Edit</Link
-                    >
-                </div>
-                <div>
+                        ><font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                    </Link>
+                    &nbsp;
                     <Link
                         :href="`/organisation/${organisation.id}`"
                         method="DELETE"
-                        >Delete</Link
-                    >
+                        as="button"
+                        ><font-awesome-icon icon="fa-solid fa-trash"
+                    /></Link>
                 </div>
+            </div>
+            <h2 class="mb-6 italic">{{ organisation.description }}</h2>
+            <div class="flex justify-between">
+                <p class="text-[#3d405b] font-medium">
+                    <span class="text-slate-500 font-light">Category: </span>
+                    {{ organisation.category }}
+                </p>
+                <p class="text-[#e07a5f] font-medium">
+                    <span class="text-slate-500 font-light">Demographic: </span>
+                    {{ organisation.demographic }}
+                </p>
             </div>
 
             <!-- Contact details -->
