@@ -11,10 +11,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import MainLayout from "./Layouts/MainLayout.vue";
+import { InertiaProgress } from "@inertiajs/progress";
 import "../css/app.css";
 
 library.add(faUserSecret, faPaperPlane, faPhone, faTrash, faPenToSquare);
 library.add(faTwitter);
+
+InertiaProgress.init({
+    delay: 0,
+    color: "#29d",
+    includeCSS: true,
+    showSpinner: true,
+});
 
 createInertiaApp({
     resolve: async (name) => {
