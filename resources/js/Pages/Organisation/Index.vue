@@ -1,5 +1,7 @@
 <template>
     <div class="w-2/3 mx-auto">
+        <button @click="showModal = true">Open Modal</button>
+
         <Box v-for="organisation in organisations" :key="organisation.id">
             <div class="flex justify-between">
                 <div>
@@ -58,14 +60,33 @@
                 </div>
             </div>
         </Box>
+        <the-modal
+            v-show="showModal"
+            @close-modal="showModal = false"
+        ></the-modal>
     </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
 
 defineProps({
     organisations: Array,
 });
+</script>
+
+<script>
+import Modal from "../../Components/UI/Modal.vue";
+export default {
+    components: {
+        "the-modal": Modal,
+    },
+    data() {
+        return {
+            showModal: false,
+        };
+    },
+};
 </script>
