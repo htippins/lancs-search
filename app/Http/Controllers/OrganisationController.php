@@ -7,11 +7,14 @@ use Illuminate\Http\Request;
 
 class OrganisationController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return inertia(
             'Organisation/Index',
             [
+                'filters' => $request->only([
+                    'title',
+                ]),
                 'organisations' => Organisation::orderBy('title')
                     ->paginate(10)
             ]);

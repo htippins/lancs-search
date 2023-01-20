@@ -1,4 +1,5 @@
 <template>
+    <Filters />
     <div class="w-2/3 mx-auto">
         <button @click="showModal = true">Open Modal</button>
 
@@ -75,18 +76,17 @@
             <Pagination :links="organisations.links"></Pagination>
         </div>
 
-        <the-modal
-            v-show="showModal"
-            @close-modal="showModal = false"
-        ></the-modal>
+        <the-modal v-show="showModal" @close-modal="showModal = false">
+            <div>{{ this.organisationArr }}</div></the-modal
+        >
     </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
 import Pagination from "@/Components/UI/Pagination.vue";
+import Filters from "@/Pages/Index/Components/Filters.vue";
 
 defineProps({
     organisations: Object,
