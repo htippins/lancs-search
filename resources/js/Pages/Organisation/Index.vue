@@ -2,10 +2,16 @@
     <div class="w-2/3 mx-auto">
         <button @click="showModal = true">Open Modal</button>
 
-        <Box v-for="organisation in organisations" :key="organisation.id">
+        <Box
+            v-for="organisation in organisations.data"
+            :key="organisation.id"
+            :organisation="organisation"
+        >
             <div class="flex justify-between">
                 <div>
-                    <h1 class="text-2xl mb-2">{{ organisation.title }}</h1>
+                    <h1 class="text-2xl mb-2">
+                        {{ organisation.title }}
+                    </h1>
                 </div>
                 <div>
                     <Link :href="`/organisation/${organisation.id}/edit`"
@@ -16,8 +22,9 @@
                         :href="`/organisation/${organisation.id}`"
                         method="DELETE"
                         as="button"
-                        ><font-awesome-icon icon="fa-solid fa-trash"
-                    /></Link>
+                        ><font-awesome-icon icon="fa-solid fa-trash" /></Link
+                    >&nbsp;
+                    <button @click="pushToArray(organisation.id)">+</button>
                 </div>
             </div>
             <h2 class="mb-6 italic">{{ organisation.description }}</h2>
@@ -60,6 +67,14 @@
                 </div>
             </div>
         </Box>
+
+        <div
+            v-if="organisations.data.length"
+            class="w-full flex justify-center mt-8 mb-8"
+        >
+            <Pagination :links="organisations.links"></Pagination>
+        </div>
+
         <the-modal
             v-show="showModal"
             @close-modal="showModal = false"
@@ -71,9 +86,10 @@
 import { ref } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
+import Pagination from "@/Components/UI/Pagination.vue";
 
 defineProps({
-    organisations: Array,
+    organisations: Object,
 });
 </script>
 
@@ -86,7 +102,13 @@ export default {
     data() {
         return {
             showModal: false,
+            organisationArr: [],
         };
+    },
+    methods: {
+        pushToArray(event) {
+            this.organisationArr.push(event);
+        },
     },
 };
 </script>
