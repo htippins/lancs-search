@@ -7,7 +7,7 @@
 
     <title>LancsSearch</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
-
+    @routes
     @vite('resources/js/app.js')
     @inertiaHead
 </head>

@@ -221,5 +221,5 @@ const form = useForm({
     twitter: null,
 });
 
-const create = () => form.post("/organisation");
+const create = () => form.post(route("organisation.store"));
 </script>

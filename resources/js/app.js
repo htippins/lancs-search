@@ -13,6 +13,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import MainLayout from "./Layouts/MainLayout.vue";
 import { InertiaProgress } from "@inertiajs/progress";
 import "../css/app.css";
+import { ZiggyVue } from "ziggy";
 
 library.add(faUserSecret, faPaperPlane, faPhone, faTrash, faPenToSquare);
 library.add(faTwitter);
@@ -37,6 +38,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
+            .use(ZiggyVue)
             .mount(el);
     },
 });

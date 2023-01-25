@@ -3,14 +3,14 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-lg font-medium">
-                    <Link href="/organisation">Browse</Link>
+                    <Link :href="route('organisation.index')">Browse</Link>
                 </div>
                 <div class="text-xl text-[#81b29a] font-bold text-center">
                     <Link href="/">LancsSearch</Link>
                 </div>
                 <div>
                     <Link
-                        href="/organisation/create"
+                        :href="route('organisation.create')"
                         class="bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md"
                         >+ Submit an organisation</Link
                     >

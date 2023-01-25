@@ -225,5 +225,8 @@ const form = useForm({
     twitter: props.organisation.twitter,
 });
 
-const update = () => form.put(`/organisation/${props.organisation.id}`);
+const update = () =>
+    form.put(
+        route("organisation.update", { organisation: props.organisation.id })
+    );
 </script>

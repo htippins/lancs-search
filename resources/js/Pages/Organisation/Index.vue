@@ -1,7 +1,7 @@
 <template>
-    <Filters />
+    <Filters :filters="filters" />
     <div class="w-2/3 mx-auto">
-        <button @click="showModal = true">Open Modal</button>
+        <!-- <button @click="showModal = true">Open Modal</button> -->
 
         <Box
             v-for="organisation in organisations.data"
@@ -15,27 +15,27 @@
                     </h1>
                 </div>
                 <div>
-                    <Link :href="`/organisation/${organisation.id}/edit`"
+                    <Link :href="route('organisation.edit', organisation.id)"
                         ><font-awesome-icon icon="fa-solid fa-pen-to-square" />
                     </Link>
                     &nbsp;
                     <Link
-                        :href="`/organisation/${organisation.id}`"
+                        :href="route('organisation.destroy', organisation.id)"
                         method="DELETE"
                         as="button"
                         ><font-awesome-icon icon="fa-solid fa-trash" /></Link
                     >&nbsp;
-                    <button @click="pushToArray(organisation.id)">+</button>
+                    <button @click="push(organisation.id)">+</button>
                 </div>
             </div>
             <h2 class="mb-6 italic">{{ organisation.description }}</h2>
-            <div class="flex justify-between">
+            <div class="">
                 <p class="text-[#3d405b] font-medium">
-                    <span class="text-slate-500 font-light">Category: </span>
+                    <span class="text-gray-500 font-light">Category: </span>
                     {{ organisation.category }}
                 </p>
-                <p class="text-[#e07a5f] font-medium">
-                    <span class="text-slate-500 font-light">Demographic: </span>
+                <p class="text-[#3d405b] font-medium">
+                    <span class="text-gray-500 font-light">Demographic: </span>
                     {{ organisation.demographic }}
                 </p>
             </div>
@@ -77,7 +77,7 @@
         </div>
 
         <the-modal v-show="showModal" @close-modal="showModal = false">
-            <div>{{ this.organisationArr }}</div></the-modal
+            <div>{{ arr }}</div></the-modal
         >
     </div>
 </template>
@@ -87,10 +87,18 @@ import { Link } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
 import Pagination from "@/Components/UI/Pagination.vue";
 import Filters from "@/Pages/Index/Components/Filters.vue";
+import { ref } from "vue";
 
 defineProps({
     organisations: Object,
+    filters: Object,
 });
+
+const arr = ref([]);
+
+const push = (id) => {
+    arr.value.push(id);
+};
 </script>
 
 <script>
@@ -102,13 +110,7 @@ export default {
     data() {
         return {
             showModal: false,
-            organisationArr: [],
         };
-    },
-    methods: {
-        pushToArray(event) {
-            this.organisationArr.push(event);
-        },
     },
 };
 </script>

@@ -1,32 +1,76 @@
 <template>
-    <form>
-        <div class="mb-8 mt-4 flex flex-wrap gap-2">
-            <div class="flex flex-nowrap items-center">
-                <input type="text" placeholder="Organisation name" />
-                <input type="text" placeholder="Location" />
-            </div>
-            <div class="flex flex-nowrap items-center">
-                <select>
-                    <option :value="null">Category</option>
-                    <option v-for="category in categories">
-                        {{ category.cat }}
-                    </option>
-                </select>
-                <select>
-                    <option :value="null">Demographic</option>
-                    <option v-for="demographic in demographics">
-                        {{ demographic.type }}
-                    </option>
-                </select>
-            </div>
+    <div class="flex justify-center">
+        <form @submit.prevent="filter">
+            <div class="mb-8 mt-4 flex flex-wrap gap-2">
+                <div class="flex flex-nowrap items-center">
+                    <input
+                        v-model="filterForm.title"
+                        type="text"
+                        placeholder="Organisation name"
+                        class="input-filter-l"
+                    />
+                    <input
+                        v-model="filterForm.city"
+                        type="text"
+                        placeholder="Location"
+                        class="input-filter-r"
+                    />
+                </div>
+                <div class="flex flex-nowrap items-center">
+                    <select
+                        class="input-filter-l"
+                        v-model="filterForm.category"
+                    >
+                        <option :value="null">Category</option>
+                        <option v-for="category in categories">
+                            {{ category.cat }}
+                        </option>
+                    </select>
+                    <select
+                        class="input-filter-r"
+                        v-model="filterForm.demographic"
+                    >
+                        <option :value="null">Demographic</option>
+                        <option v-for="demographic in demographics">
+                            {{ demographic.type }}
+                        </option>
+                    </select>
+                </div>
 
-            <button type="submit">Filter</button>
-            <button type="reset">Clear</button>
-        </div>
-    </form>
+                <button type="submit" class="btn-normal">Filter</button>
+                <button type="reset" @click="clear">Clear</button>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script setup>
+import { useForm } from "@inertiajs/inertia-vue3";
+
+const props = defineProps({ filters: Object });
+
+const filterForm = useForm({
+    title: props.filters.title ?? null,
+    city: props.filters.city ?? null,
+    category: props.filters.category ?? null,
+    demographic: props.filters.demographic ?? null,
+});
+
+const filter = () => {
+    filterForm.get(route("organisation.index"), {
+        preserveState: true,
+        preserveScroll: true,
+    });
+};
+
+const clear = () => {
+    filterForm.title = null;
+    filterForm.city = null;
+    filterForm.category = null;
+    filterForm.demographic = null;
+    filter();
+};
+
 const categories = [
     { cat: "Therapy" },
     { cat: "Debt" },
@@ -55,7 +99,7 @@ const categories = [
 
 const demographics = [
     { type: "Young persons" },
-    { type: "Adults" },
+    { type: "Adult" },
     { type: "Older adults" },
     { type: "Any age" },
 ];

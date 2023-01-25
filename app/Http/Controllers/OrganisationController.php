@@ -9,14 +9,31 @@ class OrganisationController extends Controller
 {
     public function index(Request $request)
     {
+        $filters = $request->only([
+            'title', 'city', 'category', 'demographic'
+        ]);
+
+        $query = Organisation::orderBy('title');
+
+        if($filters['title'] ?? false){
+            $query->where('title', $filters['title']);
+        }
+        if($filters['city'] ?? false){
+            $query->where('city', $filters['city']);
+        }
+        if($filters['category'] ?? false){
+            $query->where('category', $filters['category']);
+        }
+        if($filters['demographic'] ?? false){
+            $query->where('demographic', '=', $filters['demographic']);
+        }
+
         return inertia(
             'Organisation/Index',
             [
-                'filters' => $request->only([
-                    'title',
-                ]),
-                'organisations' => Organisation::orderBy('title')
-                    ->paginate(10)
+                'filters' => $filters,
+                'organisations' => $query->paginate(10)
+                    ->withQueryString()
             ]);
     }
 
@@ -47,7 +64,7 @@ class OrganisationController extends Controller
 
 
         return redirect()->route('organisation.index')
-            ->with('success', 'Listing was created!');
+            ->with('success', 'Entry was created!');
     }
 
     public function show(Organisation $organisation)
@@ -90,7 +107,7 @@ class OrganisationController extends Controller
 
 
         return redirect()->route('organisation.index')
-            ->with('success', 'Listing was successfully edited');
+            ->with('success', 'Organisation was successfully edited');
     }
 
     public function destroy(Organisation $organisation)
@@ -98,6 +115,6 @@ class OrganisationController extends Controller
         $organisation->delete();
 
         return redirect()->back()
-            ->with('success', 'Listing was successfully deleted');
+            ->with('success', 'Organisation was successfully deleted');
     }
 }
