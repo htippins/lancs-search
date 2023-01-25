@@ -30,11 +30,11 @@
             </div>
             <h2 class="mb-6 italic">{{ organisation.description }}</h2>
             <div class="">
-                <p class="text-[#3d405b] font-medium">
+                <p class="text-[#3d405b]">
                     <span class="text-gray-500 font-light">Category: </span>
                     {{ organisation.category }}
                 </p>
-                <p class="text-[#3d405b] font-medium">
+                <p class="text-[#3d405b]">
                     <span class="text-gray-500 font-light">Demographic: </span>
                     {{ organisation.demographic }}
                 </p>
@@ -43,28 +43,41 @@
             <!-- Contact details -->
             <div class="mt-3 border-t-4 border-[#f2cc8f]">
                 <p class="mt-3">Contact details</p>
-                <div class="grid grid-cols-3 text-gray-600 text-md mt-2">
-                    <p v-if="organisation.phone_num_1">
-                        <font-awesome-icon icon="fa-solid fa-phone" />
-                        {{ organisation.phone_num_1 }}
-                    </p>
-                    <p v-if="organisation.phone_num_2">
-                        {{ organisation.phone_num_2 }}
-                    </p>
-                    <p v-if="organisation.text_num">
-                        {{ organisation.text_num }}
-                    </p>
-                    <p v-if="organisation.website">
-                        {{ organisation.website }}
-                    </p>
-                    <p v-if="organisation.email">
-                        <font-awesome-icon icon="fa-solid fa-paper-plane" />
-                        {{ organisation.email }}
-                    </p>
-                    <p v-if="organisation.twitter">
-                        <font-awesome-icon icon="fa-brands fa-twitter" />
-                        {{ organisation.twitter }}
-                    </p>
+                <div class="flex flex-col gap-3 text-gray-600 text-md">
+                    <div class="flex justify-between items-center">
+                        <p v-if="organisation.phone_num_1">
+                            <font-awesome-icon icon="fa-solid fa-phone" />
+                            {{ organisation.phone_num_1 }}
+                        </p>
+                        <p v-if="organisation.phone_num_2">
+                            {{ organisation.phone_num_2 }}
+                        </p>
+                        <p v-if="organisation.text_num">
+                            {{ organisation.text_num }}
+                        </p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p v-if="organisation.email">
+                            <font-awesome-icon icon="fa-solid fa-paper-plane" />
+                            {{ organisation.email }}
+                        </p>
+                        <p v-if="organisation.website">
+                            <a :href="organisation.website" target="_blank"
+                                >{{ organisation.website }}
+                            </a>
+                        </p>
+                        <p v-if="organisation.twitter">
+                            <font-awesome-icon icon="fa-brands fa-twitter" />
+                            {{ organisation.twitter }}
+                        </p>
+                    </div>
+                    <div class="flex gap-1 items-center">
+                        <font-awesome-icon icon="fa-solid fa-location-dot" />
+                        <p v-if="organisation.city">{{ organisation.city }},</p>
+                        <p v-if="organisation.county">
+                            {{ organisation.county }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </Box>

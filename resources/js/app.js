@@ -8,6 +8,7 @@ import {
     faPhone,
     faTrash,
     faPenToSquare,
+    faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import MainLayout from "./Layouts/MainLayout.vue";
@@ -15,7 +16,14 @@ import { InertiaProgress } from "@inertiajs/progress";
 import "../css/app.css";
 import { ZiggyVue } from "ziggy";
 
-library.add(faUserSecret, faPaperPlane, faPhone, faTrash, faPenToSquare);
+library.add(
+    faUserSecret,
+    faPaperPlane,
+    faPhone,
+    faTrash,
+    faPenToSquare,
+    faLocationDot
+);
 library.add(faTwitter);
 
 InertiaProgress.init({

@@ -11,7 +11,7 @@
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.title">
-                    <p class="text-right text-red-800">Required field</p>
+                    <p class="input-error">Required field</p>
                 </div>
             </div>
             <div>
@@ -24,7 +24,7 @@
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.description">
-                    <p class="text-right text-red-800">Required field</p>
+                    <p class="input-error">Required field</p>
                 </div>
             </div>
             <div>
@@ -71,7 +71,7 @@
                     <option value="Food banks">Food banks</option>
                 </select>
                 <div v-if="form.errors.category">
-                    <p class="text-right text-red-800">Required field</p>
+                    <p class="input-error">Required field</p>
                 </div>
             </div>
             <div>
@@ -89,7 +89,7 @@
                     <option value="Any age">Any age</option>
                 </select>
                 <div v-if="form.errors.demographic">
-                    <p class="text-right text-red-800">Required field</p>
+                    <p class="input-error">Required field</p>
                 </div>
             </div>
             <div>
@@ -102,7 +102,7 @@
                     class="block w-full p-2 rounded-md shadow-sm border border-gray-300 text-gray-500 mb-2"
                 />
                 <div v-if="form.errors.city">
-                    <p class="text-right text-red-800">Required field</p>
+                    <p class="input-error">Required field</p>
                 </div>
             </div>
             <div>
