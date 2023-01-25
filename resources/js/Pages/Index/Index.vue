@@ -22,17 +22,17 @@
         <div class="flex gap-4 justify-center p-4">
             <Link
                 :href="route('organisation.index')"
-                class="rounded-btn-index flex items-center justify-center text-center"
+                class="rounded-btn-index flex items-center justify-center text-center hover:bg-[#9BCCB4]"
                 >See full list</Link
             >
             <Link
                 :href="route('login')"
-                class="rounded-btn-index flex items-center justify-center text-center"
+                class="rounded-btn-index flex items-center justify-center text-center hover:bg-[#9BCCB4]"
                 >Log in</Link
             >
             <Link
                 :href="route('organisation.index')"
-                class="rounded-btn-index flex items-center justify-center text-center"
+                class="rounded-btn-index flex items-center justify-center text-center hover:bg-[#9BCCB4]"
                 >Register</Link
             >
         </div>
