@@ -19,7 +19,11 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/show', [IndexController::class, 'show']);
 
-Route::resource('organisation', OrganisationController::class);
+Route::resource('organisation', OrganisationController::class)
+    ->only(['create', 'store', 'edit', 'update', 'destroy'])
+    ->middleware('auth');
+Route::resource('organisation', OrganisationController::class)
+    ->except(['create', 'store', 'edit', 'update', 'destroy']);
 
 Route::get('login', [AuthController::class, 'create'])
 ->name('login');
