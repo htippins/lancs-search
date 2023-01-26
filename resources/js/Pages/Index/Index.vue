@@ -31,7 +31,7 @@
                 >Log in</Link
             >
             <Link
-                :href="route('organisation.index')"
+                :href="route('user-account.create')"
                 class="rounded-btn-index flex items-center justify-center text-center hover:bg-[#9BCCB4]"
                 >Register</Link
             >
