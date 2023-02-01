@@ -3,7 +3,7 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-xl text-[#81b29a] font-bold text-center">
-                    <Link href="/">LancsSearch</Link>
+                    <Link href="/">LSN</Link>
                 </div>
                 <div class="flex gap-4 items-center" v-if="user">
                     <div class="text-sm text-gray-500">

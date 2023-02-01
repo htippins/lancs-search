@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(
                 \App\Models\User::class,
                 'by_user_id'
-            );
+            )->constrained('users');
         });
     }
 

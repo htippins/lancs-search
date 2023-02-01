@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class OrganisationController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Organisation::class, 'organisation');
+    }
+
     public function index(Request $request)
     {
         $filters = $request->only([
@@ -45,7 +50,7 @@ class OrganisationController extends Controller
 
     public function store(Request $request)
     {
-        Organisation::create(
+        $request->user()->organisation()->create(
             $request->validate([
                 'title' => 'required|string',
                 'description' => 'required|string',

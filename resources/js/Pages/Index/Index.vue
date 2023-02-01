@@ -1,12 +1,14 @@
 <template>
     <main class="container mx-auto">
         <div class="flex justify-center flex-col w-1/2 mx-auto gap-8 mb-10">
-            <h1 class="text-center text-2xl">Welcome to LancsSearch</h1>
+            <h1 class="text-center text-2xl">
+                Welcome to Lancs Support Network
+            </h1>
             <p>
-                The purpose of LancsSearch is to serve as a centralised database
+                The purpose of this site is to serve as a centralised database
                 of NHS and third-sector organisations that offer support to the
                 community for a variety of social and mental health issues in
-                East Lancashire.
+                Lancashire.
             </p>
             <p>
                 We encourage you to add organisations that you think others
