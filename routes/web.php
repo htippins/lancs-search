@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrganisationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\UserAccountController;
 
 /*
@@ -35,3 +36,10 @@ Route::delete('logout', [AuthController::class, 'destroy'])
 
 Route::resource('user-account', UserAccountController::class)
     ->only(['create', 'store']);
+
+Route::prefix('account')
+->name('account.')
+->middleware('auth')
+->group(function(){
+    Route::resource('organisation', MyAccountController::class);
+});
