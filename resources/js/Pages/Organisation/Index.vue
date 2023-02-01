@@ -14,7 +14,7 @@
                         {{ organisation.title }}
                     </h1>
                 </div>
-                <div>
+                <div v-if="user">
                     <Link :href="route('organisation.edit', organisation.id)"
                         ><font-awesome-icon icon="fa-solid fa-pen-to-square" />
                     </Link>
@@ -23,9 +23,10 @@
                         :href="route('organisation.destroy', organisation.id)"
                         method="DELETE"
                         as="button"
-                        ><font-awesome-icon icon="fa-solid fa-trash" /></Link
-                    >&nbsp;
-                    <button @click="push(organisation.id)">+</button>
+                        ><font-awesome-icon icon="fa-solid fa-trash"
+                    /></Link>
+                    <!-- &nbsp;
+                    <button @click="push(organisation.id)">+</button> -->
                 </div>
             </div>
             <h2 class="mb-6 italic">{{ organisation.description }}</h2>
@@ -96,16 +97,19 @@
 </template>
 
 <script setup>
-import { Link } from "@inertiajs/inertia-vue3";
+import { Link, usePage } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
 import Pagination from "@/Components/UI/Pagination.vue";
 import Filters from "@/Pages/Index/Components/Filters.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 defineProps({
     organisations: Object,
     filters: Object,
 });
+
+const page = usePage();
+const user = computed(() => page.props.value.user);
 
 const arr = ref([]);
 

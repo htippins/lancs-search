@@ -18,28 +18,29 @@ class OrganisationController extends Controller
             'title', 'city', 'category', 'demographic'
         ]);
 
-        $query = Organisation::orderBy('title');
-
-        if($filters['title'] ?? false){
-            $query->where('title', $filters['title']);
-        }
-        if($filters['city'] ?? false){
-            $query->where('city', $filters['city']);
-        }
-        if($filters['category'] ?? false){
-            $query->where('category', $filters['category']);
-        }
-        if($filters['demographic'] ?? false){
-            $query->where('demographic', '=', $filters['demographic']);
-        }
-
         return inertia(
             'Organisation/Index',
             [
                 'filters' => $filters,
-                'organisations' => $query->paginate(10)
-                    ->withQueryString()
-            ]);
+                'organisations' => Organisation::orderBy('title')
+            ->when(
+                $filters['title'] ?? false,
+                fn ($query, $value) => $query->where('title', '=', $value)
+            )
+            ->when(
+                $filters['city'] ?? false,
+                fn ($query, $value) => $query->where('city', '=', $value)
+            )
+            ->when(
+                $filters['category'] ?? false,
+                fn ($query, $value) => $query->where('category', '=', $value)
+            )
+            ->when(
+                $filters['demographic'] ?? false,
+                fn ($query, $value) => $query->where('demographic', '=', $value)
+            )->paginate(10)->withQueryString()
+            ]
+        );
     }
 
     public function create()
