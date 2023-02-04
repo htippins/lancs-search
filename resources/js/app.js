@@ -1,4 +1,5 @@
-import { createApp, h } from "vue";
+// import { createApp, h } from "vue";
+import { createSSRApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -45,7 +46,7 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+        createSSRApp({ render: () => h(App, props) })
             .component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
             .use(ZiggyVue)
