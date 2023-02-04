@@ -14,7 +14,7 @@
         "postcss": "^8.4.20",
         "tailwindcss": "^3.2.4",
         "vite": "^4.0.3",
-        "vue": "^3.2.45"
+        "vue": "^3.2.47"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.2.1",
