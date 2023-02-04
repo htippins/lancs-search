@@ -4,11 +4,6 @@ import { Link, useForm, usePage } from "@inertiajs/inertia-vue3";
 import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faUserSecret, faPaperPlane, faPhone, faTrash, faPenToSquare, faLocationDot, faHouse } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { InertiaProgress } from "@inertiajs/progress";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -825,141 +820,6 @@ const __vite_glob_0_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   __proto__: null,
   default: _sfc_main$1
 }, Symbol.toStringTag, { value: "Module" }));
-const _imports_0 = "/build/assets/lsn-logo-72964939.png";
-const _sfc_main = {
-  __name: "MainLayout",
-  __ssrInlineRender: true,
-  setup(__props) {
-    const page = usePage();
-    const flashSuccess = computed(() => page.props.value.flash.success);
-    const user = computed(() => page.props.value.user);
-    return (_ctx, _push, _parent, _attrs) => {
-      const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
-      _push(`<!--[--><header class="border-b border-gray-200 w-full"><div class="container mx-auto"><nav class="p-4 flex items-center justify-between"><div class="text-xl text-[#81b29a] font-bold text-center">`);
-      _push(ssrRenderComponent(unref(Link), {
-        href: "/",
-        class: "tracking-tight"
-      }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<div class="w-10 h-10"${_scopeId}><img${ssrRenderAttr("src", _imports_0)} class="object-cover"${_scopeId}></div>`);
-          } else {
-            return [
-              createVNode("div", { class: "w-10 h-10" }, [
-                createVNode("img", {
-                  src: _imports_0,
-                  class: "object-cover"
-                })
-              ])
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</div>`);
-      if (unref(user)) {
-        _push(`<div class="flex gap-4 items-center text-gray-500">`);
-        _push(ssrRenderComponent(unref(Link), {
-          href: _ctx.route("account.organisation.index")
-        }, {
-          default: withCtx((_, _push2, _parent2, _scopeId) => {
-            if (_push2) {
-              _push2(ssrRenderComponent(_component_font_awesome_icon, { icon: "fa-solid fa-house" }, null, _parent2, _scopeId));
-            } else {
-              return [
-                createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-house" })
-              ];
-            }
-          }),
-          _: 1
-        }, _parent));
-        _push(`<div class="text-sm">Hello, ${ssrInterpolate(unref(user).name)}!</div>`);
-        _push(ssrRenderComponent(unref(Link), {
-          href: _ctx.route("organisation.create"),
-          class: "bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md"
-        }, {
-          default: withCtx((_, _push2, _parent2, _scopeId) => {
-            if (_push2) {
-              _push2(`+ Submit an organisation`);
-            } else {
-              return [
-                createTextVNode("+ Submit an organisation")
-              ];
-            }
-          }),
-          _: 1
-        }, _parent));
-        _push(`<div>`);
-        _push(ssrRenderComponent(unref(Link), {
-          href: _ctx.route("logout"),
-          method: "delete",
-          as: "button"
-        }, {
-          default: withCtx((_, _push2, _parent2, _scopeId) => {
-            if (_push2) {
-              _push2(`Logout`);
-            } else {
-              return [
-                createTextVNode("Logout")
-              ];
-            }
-          }),
-          _: 1
-        }, _parent));
-        _push(`</div></div>`);
-      } else {
-        _push(`<div class="flex items-center gap-2">`);
-        _push(ssrRenderComponent(unref(Link), {
-          href: _ctx.route("user-account.create")
-        }, {
-          default: withCtx((_, _push2, _parent2, _scopeId) => {
-            if (_push2) {
-              _push2(`Register`);
-            } else {
-              return [
-                createTextVNode("Register")
-              ];
-            }
-          }),
-          _: 1
-        }, _parent));
-        _push(` | `);
-        _push(ssrRenderComponent(unref(Link), {
-          href: _ctx.route("login")
-        }, {
-          default: withCtx((_, _push2, _parent2, _scopeId) => {
-            if (_push2) {
-              _push2(`Sign in`);
-            } else {
-              return [
-                createTextVNode("Sign in")
-              ];
-            }
-          }),
-          _: 1
-        }, _parent));
-        _push(`</div>`);
-      }
-      _push(`</nav></div></header><main class="container mx-auto p-4 w-full">`);
-      if (unref(flashSuccess)) {
-        _push(`<div class="mb-4 border rounded-md shadow-sm border-green-200 bg-green-50 p-2">${ssrInterpolate(unref(flashSuccess))}</div>`);
-      } else {
-        _push(`<!---->`);
-      }
-      ssrRenderSlot(_ctx.$slots, "default", {}, () => {
-        _push(`Default`);
-      }, _push, _parent);
-      _push(`</main><!--]-->`);
-    };
-  }
-};
-const _sfc_setup = _sfc_main.setup;
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Layouts/MainLayout.vue");
-  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
-};
-const app = "";
 function t() {
   return t = Object.assign ? Object.assign.bind() : function(t4) {
     for (var e2 = 1; e2 < arguments.length; e2++) {
@@ -1324,36 +1184,154 @@ const C = { install: (t4, e2) => {
   }(t5, r3, n2, o2);
   t4.mixin({ methods: { route: r2 } }), parseInt(t4.version) > 2 && t4.provide("route", r2);
 } };
-library.add(
-  faUserSecret,
-  faPaperPlane,
-  faPhone,
-  faTrash,
-  faPenToSquare,
-  faLocationDot,
-  faHouse
-);
-library.add(faTwitter);
-InertiaProgress.init({
-  delay: 0,
-  color: "#29d",
-  includeCSS: true,
-  showSpinner: true
-});
+const _imports_0 = "/build/assets/lsn-logo-72964939.png";
+const _sfc_main = {
+  __name: "MainLayout",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const page = usePage();
+    const flashSuccess = computed(() => page.props.value.flash.success);
+    const user = computed(() => page.props.value.user);
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
+      _push(`<!--[--><header class="border-b border-gray-200 w-full"><div class="container mx-auto"><nav class="p-4 flex items-center justify-between"><div class="text-xl text-[#81b29a] font-bold text-center">`);
+      _push(ssrRenderComponent(unref(Link), {
+        href: "/",
+        class: "tracking-tight"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="w-10 h-10"${_scopeId}><img${ssrRenderAttr("src", _imports_0)} class="object-cover"${_scopeId}></div>`);
+          } else {
+            return [
+              createVNode("div", { class: "w-10 h-10" }, [
+                createVNode("img", {
+                  src: _imports_0,
+                  class: "object-cover"
+                })
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div>`);
+      if (unref(user)) {
+        _push(`<div class="flex gap-4 items-center text-gray-500">`);
+        _push(ssrRenderComponent(unref(Link), {
+          href: _ctx.route("account.organisation.index")
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(ssrRenderComponent(_component_font_awesome_icon, { icon: "fa-solid fa-house" }, null, _parent2, _scopeId));
+            } else {
+              return [
+                createVNode(_component_font_awesome_icon, { icon: "fa-solid fa-house" })
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`<div class="text-sm">Hello, ${ssrInterpolate(unref(user).name)}!</div>`);
+        _push(ssrRenderComponent(unref(Link), {
+          href: _ctx.route("organisation.create"),
+          class: "bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`+ Submit an organisation`);
+            } else {
+              return [
+                createTextVNode("+ Submit an organisation")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`<div>`);
+        _push(ssrRenderComponent(unref(Link), {
+          href: _ctx.route("logout"),
+          method: "delete",
+          as: "button"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`Logout`);
+            } else {
+              return [
+                createTextVNode("Logout")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div></div>`);
+      } else {
+        _push(`<div class="flex items-center gap-2">`);
+        _push(ssrRenderComponent(unref(Link), {
+          href: _ctx.route("user-account.create")
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`Register`);
+            } else {
+              return [
+                createTextVNode("Register")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(` | `);
+        _push(ssrRenderComponent(unref(Link), {
+          href: _ctx.route("login")
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`Sign in`);
+            } else {
+              return [
+                createTextVNode("Sign in")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div>`);
+      }
+      _push(`</nav></div></header><main class="container mx-auto p-4 w-full">`);
+      if (unref(flashSuccess)) {
+        _push(`<div class="mb-4 border rounded-md shadow-sm border-green-200 bg-green-50 p-2">${ssrInterpolate(unref(flashSuccess))}</div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      ssrRenderSlot(_ctx.$slots, "default", {}, () => {
+        _push(`Default`);
+      }, _push, _parent);
+      _push(`</main><!--]-->`);
+    };
+  }
+};
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Layouts/MainLayout.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
 createServer(
   (page) => createInertiaApp({
     page,
     render: renderToString,
     resolve: (name) => {
       const pages = /* @__PURE__ */ Object.assign({ "./Pages/Account/Index.vue": __vite_glob_0_0, "./Pages/Auth/Login.vue": __vite_glob_0_1, "./Pages/Index/Components/Filters.vue": __vite_glob_0_2, "./Pages/Index/Index.vue": __vite_glob_0_3, "./Pages/Index/Show.vue": __vite_glob_0_4, "./Pages/Organisation/Create.vue": __vite_glob_0_5, "./Pages/Organisation/Edit.vue": __vite_glob_0_6, "./Pages/Organisation/Index.vue": __vite_glob_0_7, "./Pages/Organisation/Show.vue": __vite_glob_0_8, "./Pages/UserAccount/Create.vue": __vite_glob_0_9 });
-      const page2 = pages[`./Pages/${name}.vue`];
+      const page2 = pages[`./Pages/${name}.vue`]();
       page2.default.layout = page2.default.layout || _sfc_main;
       return page2;
     },
     setup({ App, props, plugin }) {
       return createSSRApp({
         render: () => h$1(App, props)
-      }).component("font-awesome-icon", FontAwesomeIcon).use(plugin).use(C);
+      }).use(plugin).use(C);
     }
   })
 );

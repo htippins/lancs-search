@@ -1,4 +1,3 @@
-// import { createApp, h } from "vue";
 import { createSSRApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { library } from "@fortawesome/fontawesome-svg-core";
