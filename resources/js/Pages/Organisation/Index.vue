@@ -8,43 +8,22 @@
             :key="organisation.id"
             :organisation="organisation"
         >
-            <div class="flex justify-between">
+            <div>
                 <div>
-                    <h1 class="text-2xl mb-2">
+                    <h1 class="text-2xl">
                         {{ organisation.title }}
                     </h1>
-                </div>
-                <div v-if="user">
-                    <Link :href="route('organisation.edit', organisation.id)"
-                        ><font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                    </Link>
-                    &nbsp;
-                    <Link
-                        :href="route('organisation.destroy', organisation.id)"
-                        method="DELETE"
-                        as="button"
-                        ><font-awesome-icon icon="fa-solid fa-trash"
-                    /></Link>
-                    <!-- &nbsp;
-                    <button @click="push(organisation.id)">+</button> -->
+                    <div class="text-sm tracking-tight text-gray-500 mb-2">
+                        {{ organisation.demographic }} |
+                        {{ organisation.category }}
+                    </div>
                 </div>
             </div>
-            <h2 class="mb-6 italic">{{ organisation.description }}</h2>
-            <div class="">
-                <p class="text-[#3d405b]">
-                    <span class="text-gray-500 font-light">Category: </span>
-                    {{ organisation.category }}
-                </p>
-                <p class="text-[#3d405b]">
-                    <span class="text-gray-500 font-light">Demographic: </span>
-                    {{ organisation.demographic }}
-                </p>
-            </div>
+            <h2 class="mb-3 italic">{{ organisation.description }}</h2>
 
             <!-- Contact details -->
-            <div class="mt-3 border-t-4 border-[#f2cc8f]">
-                <p class="mt-3">Contact details</p>
-                <div class="flex flex-col gap-3 text-gray-600 text-md">
+            <div class="pt-3 border-t-2 border-[#f2cc8f]">
+                <div class="flex flex-col gap-3 text-gray-500 text-sm">
                     <div class="flex justify-between items-center">
                         <p v-if="organisation.phone_num_1">
                             <font-awesome-icon icon="fa-solid fa-phone" />

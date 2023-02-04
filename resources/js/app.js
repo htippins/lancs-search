@@ -9,6 +9,7 @@ import {
     faTrash,
     faPenToSquare,
     faLocationDot,
+    faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import MainLayout from "./Layouts/MainLayout.vue";
@@ -22,7 +23,8 @@ library.add(
     faPhone,
     faTrash,
     faPenToSquare,
-    faLocationDot
+    faLocationDot,
+    faHouse
 );
 library.add(faTwitter);
 

@@ -2,7 +2,7 @@
     <main class="container mx-auto">
         <div class="flex justify-center flex-col w-1/2 mx-auto gap-8 mb-10">
             <h1 class="text-center text-2xl">
-                Welcome to Lancs Support Network
+                Welcome to Lancashire Support Network
             </h1>
             <p>
                 The purpose of this site is to serve as a centralised database

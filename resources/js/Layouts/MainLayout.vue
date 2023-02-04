@@ -3,12 +3,20 @@
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-xl text-[#81b29a] font-bold text-center">
-                    <Link href="/" class="tracking-tight">lsn</Link>
+                    <Link href="/" class="tracking-tight">
+                        <div class="w-10 h-10">
+                            <img
+                                src="../Pages/Index/Assets/lsn-logo.png"
+                                class="object-cover"
+                            />
+                        </div>
+                    </Link>
                 </div>
-                <div class="flex gap-4 items-center" v-if="user">
-                    <div class="text-sm text-gray-500">
-                        Hello, {{ user.name }}!
-                    </div>
+                <div class="flex gap-4 items-center text-gray-500" v-if="user">
+                    <Link :href="route('account.organisation.index')">
+                        <font-awesome-icon icon="fa-solid fa-house"
+                    /></Link>
+                    <div class="text-sm">Hello, {{ user.name }}!</div>
                     <Link
                         :href="route('organisation.create')"
                         class="bg-[#81b29a] hover:bg-[#9BCCB4] text-white font-medium p-2 rounded-md"
