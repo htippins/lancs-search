@@ -11,11 +11,9 @@ createServer((page) =>
         page,
         render: renderToString,
         resolve: (name) => {
-            const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
-
-            const page = pages[`./Pages/${name}.vue`]();
+            const pages = import.meta.glob("./Pages/**/*.vue");
+            const page = pages[`./Pages/${name}.vue`];
             page.default.layout = page.default.layout || MainLayout;
-
             return page;
         },
         setup({ App, props, plugin }) {
