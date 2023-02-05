@@ -4,7 +4,7 @@
         "dev": "vite",
         "build": "vite build",
         "ssr-prod": "vite build && vite build --ssr",
-        "ssr": "node storage/ssr/ssr.js"
+        "ssr": "node bootstrap/ssr/ssr.mjs"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.3",
