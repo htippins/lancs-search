@@ -12,7 +12,7 @@
     @inertiaHead
 </head>
 
-<body>
+<body class="bg-[#FEECE8]">
     @inertia
     <!-- dfjlkds -->
 </body>

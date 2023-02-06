@@ -1,5 +1,5 @@
 <template>
-    <header class="border-b border-gray-200 w-full">
+    <header class="w-full">
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
                 <div class="text-xl text-[#81b29a] font-bold text-center">
