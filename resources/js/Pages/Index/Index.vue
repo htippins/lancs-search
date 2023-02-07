@@ -1,5 +1,51 @@
 <template>
-    <main class="container mx-auto">
+    <main class="mx-auto">
+        <div class="grid grid-cols-5 h-screen w-screen">
+            <div class="h-full z-20 rounded-r-xl col-span-3">
+                <div
+                    class="text-[60px] pt-16 leading-snug transform transition duration-700 hover:scale-x-105 w-1/4"
+                >
+                    <h1>Lancashire</h1>
+                    <h1>Support</h1>
+                    <h1>Network</h1>
+                </div>
+                <h2 class="mt-2">
+                    A centralised database of NHS and third-sector organisations
+                    offering social and mental health support.
+                </h2>
+                <div>
+                    <button class="border-2 p-2 rounded-md mt-5">
+                        <Link :href="route('organisation.index')">
+                            See full list here
+                        </Link>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full h-full z-10 col-span-2 bg-no-repeat">
+                <img
+                    src="./Assets/hero-img.jpg"
+                    alt=""
+                    class="w-full h-full rounded-l-lg"
+                />
+            </div>
+        </div>
+        <section>
+            <div class="border-2 p-4 w-1/2 mx-auto rounded-md mt-20">
+                <div></div>
+            </div>
+        </section>
+    </main>
+    <!-- <section class="h-96 w-full">
+        <div>HEllo</div>
+        <div>HEllo</div>
+        <div>HEllo</div>
+        <div>HEllo</div>
+        <div>HEllo</div>
+        <div>HEllo</div>
+        <div>HEllo</div>
+    </section> -->
+
+    <!-- <main class="container mx-auto">
         <div class="flex justify-center flex-col w-1/2 mx-auto gap-8 mb-10">
             <h1 class="text-center text-2xl">
                 Welcome to Lancashire Support Network
@@ -38,11 +84,12 @@
                 >Register</Link
             >
         </div>
-    </main>
+    </main> -->
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/inertia-vue3";
+import { ArrowLongRightIcon } from "@heroicons/vue/24/outline";
 
 defineProps(["message"]);
 </script>

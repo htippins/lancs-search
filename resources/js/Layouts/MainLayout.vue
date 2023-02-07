@@ -2,13 +2,10 @@
     <header class="w-full">
         <div class="container mx-auto">
             <nav class="p-4 flex items-center justify-between">
-                <div class="text-xl text-[#81b29a] font-bold text-center">
+                <div>
                     <Link href="/" class="tracking-tight">
-                        <div class="w-10 h-10">
-                            <img
-                                src="../Pages/Index/Assets/lsn-logo.png"
-                                class="object-cover"
-                            />
+                        <div class="w-6 h-6">
+                            <HomeIcon></HomeIcon>
                         </div>
                     </Link>
                 </div>
@@ -54,6 +51,7 @@
 <script setup>
 import { computed } from "vue";
 import { Link, usePage } from "@inertiajs/inertia-vue3";
+import { HomeIcon } from "@heroicons/vue/24/outline";
 
 const page = usePage();
 const flashSuccess = computed(() => page.props.value.flash.success);

@@ -26,7 +26,7 @@
                 <div class="flex flex-col gap-3 text-gray-500 text-sm">
                     <div class="flex justify-between items-center">
                         <p v-if="organisation.phone_num_1">
-                            <font-awesome-icon icon="fa-solid fa-phone" />
+                            <PhoneIcon class="w-4 h-4"></PhoneIcon>
                             {{ organisation.phone_num_1 }}
                         </p>
                         <p v-if="organisation.phone_num_2">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <p v-if="organisation.email">
-                            <font-awesome-icon icon="fa-solid fa-paper-plane" />
+                            <AtSymbolIcon class="w-4 h-4"></AtSymbolIcon>
                             {{ organisation.email }}
                         </p>
                         <p v-if="organisation.website">
@@ -52,7 +52,7 @@
                         </p>
                     </div>
                     <div class="flex gap-1 items-center">
-                        <font-awesome-icon icon="fa-solid fa-location-dot" />
+                        <MapPinIcon class="w-4 h-4"></MapPinIcon>
                         <p v-if="organisation.city">{{ organisation.city }},</p>
                         <p v-if="organisation.county">
                             {{ organisation.county }}
@@ -76,11 +76,12 @@
 </template>
 
 <script setup>
-import { Link, usePage } from "@inertiajs/inertia-vue3";
+import { usePage } from "@inertiajs/inertia-vue3";
 import Box from "../../Components/UI/Box.vue";
 import Pagination from "@/Components/UI/Pagination.vue";
 import Filters from "@/Pages/Index/Components/Filters.vue";
 import { ref, computed } from "vue";
+import { AtSymbolIcon, PhoneIcon, MapPinIcon } from "@heroicons/vue/24/outline";
 
 defineProps({
     organisations: Object,
