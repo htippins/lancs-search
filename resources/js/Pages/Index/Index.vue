@@ -30,8 +30,29 @@
             </div>
         </div>
         <section>
-            <div class="border-2 p-4 w-1/2 mx-auto rounded-md mt-20">
-                <div></div>
+            <div class="border-2 p-4 w-1/2 mx-auto rounded-md mt-20 leading-10">
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>Click on the link above to see the full list</p>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>Verified organisations</p>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>
+                        Filter to find by organisation name, locality,
+                        demographic or age group
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>
+                        Add organisations that might be helpful to others by
+                        creating an account
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -89,7 +110,7 @@
 
 <script setup>
 import { Link } from "@inertiajs/inertia-vue3";
-import { ArrowLongRightIcon } from "@heroicons/vue/24/outline";
+import { CheckIcon } from "@heroicons/vue/24/outline";
 
 defineProps(["message"]);
 </script>
