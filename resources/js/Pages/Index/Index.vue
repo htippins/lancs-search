@@ -53,6 +53,20 @@
                         creating an account
                     </p>
                 </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>
+                        Add organisations that might be helpful to others by
+                        creating an account
+                    </p>
+                </div>
+                <div class="flex items-center gap-2 justify-center">
+                    <CheckIcon class="h-4 w-4" />
+                    <p>
+                        Add organisations that might be helpful to others by
+                        creating an account
+                    </p>
+                </div>
             </div>
         </section>
     </main>
