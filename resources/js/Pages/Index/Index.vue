@@ -57,7 +57,7 @@
                     <CheckIcon class="h-4 w-4" />
                     <p>
                         Add organisations that might be helpful to others by
-                        creating an account
+                        creating an account.
                     </p>
                 </div>
             </div>
