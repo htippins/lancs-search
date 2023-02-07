@@ -37,7 +37,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-4 w-full">
+    <main class="mx-auto p-4 w-screen box-border">
         <div
             v-if="flashSuccess"
             class="mb-4 border rounded-md shadow-sm border-green-200 bg-green-50 p-2"
