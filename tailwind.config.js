@@ -6,7 +6,11 @@ module.exports = {
         "./resources/js/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                hero: "url('/Users/hollytippins/Documents/Code/Inertia/lancs-laravel/resources/js/Pages/Index/Assets/hero.jpg')",
+            },
+        },
     },
     plugins: [require("@tailwindcss/forms")],
 };
