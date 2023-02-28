@@ -8,7 +8,7 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                hero: "url('/Users/hollytippins/Documents/Code/Inertia/lancs-laravel/resources/js/Pages/Index/Assets/hero.jpg')",
+                hero: "url('../../resources/js/Pages/Index/Assets/hero.jpg')",
             },
         },
     },
