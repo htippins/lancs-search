@@ -59,9 +59,9 @@ class OrganisationController extends Controller
                 'demographic' => 'required',
                 'city' => 'required',
                 'county' => 'required',
-                'phone_num_1' => 'nullable|integer',
-                'phone_num_2' => 'nullable|integer|min:4|max:11',
-                'text_num' => 'nullable|integer|min:4|max:11',
+                'phone_num_1' => 'nullable|string|min:8|max:11',
+                'phone_num_2' => 'nullable|string|min:8|max:11',
+                'text_num' => 'nullable|string|min:8|max:11',
                 'website' => 'nullable|string',
                 'email' => 'nullable|email:filter',
                 'twitter' => 'nullable'
