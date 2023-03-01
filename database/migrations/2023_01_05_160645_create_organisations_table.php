@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('demographic', 100);
             $table->string('city', 100)->nullable();
             $table->string('county', 100)->nullable();
-            $table->string('phone_num_1')->nullable();
-            $table->string('phone_num_2')->nullable();
-            $table->string('text_num')->nullable();
+            $table->string('phone_num_1', 100)->nullable();
+            $table->string('phone_num_2', 100)->nullable();
+            $table->string('text_num', 100)->nullable();
             $table->string('website', 200)->nullable();
             $table->string('email', 200)->nullable();
             $table->string('twitter', 100)->nullable();
